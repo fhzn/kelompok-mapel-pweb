@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Pendaftaran</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Data Pendaftaran Peserta</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Nama</th>
+        <th>Umur</th>
+        <th>Jenis Kelamin</th>
+        <th>Email</th>
+        <th>NISN/NIS</th>
+        <th>Asal Sekolah</th>
+        <th>Username</th>
+        <th>Sekolah Pilihan</th>
+      </tr>
+    </thead>
+    <tbody id="tabelData">
+      <!-- Data akan dimuat di sini -->
+    </tbody>
+  </table>
+  <button class="btn-kembali" onclick="kembali()">Kembali ke Form</button>
+
+  <script>
+    // Ambil data dari localStorage dan tampilkan di tabel
+    const tabelBody = document.getElementById('tabelData');
+    const dataList = JSON.parse(localStorage.getItem('dataPendaftaranList')) || [];
+
+    if (dataList.length === 0) {
+      tabelBody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding:20px;">Belum ada data pendaftaran.</td></tr>';
+    } else {
+      tabelBody.innerHTML = dataList.map((data, i) => `
+        <tr>
+          <td data-label="No.">${i + 1}</td>
+          <td data-label="Nama">${data.nama}</td>
+          <td data-label="Umur">${data.umur}</td>
+          <td data-label="Jenis Kelamin">${data.jenisKelamin}</td>
+          <td data-label="Email">${data.email}</td>
+          <td data-label="NISN/NIS">${data.nisn}</td>
+          <td data-label="Asal Sekolah">${data.asalSekolah}</td>
+          <td data-label="Username">${data.username}</td>
+          <td data-label="Sekolah Pilihan">${data.sekolah}</td>
+        </tr>
+      `).join('');
+    }
+
+    function kembali() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Pendaftaran &amp; Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Halaman 1: Form Pendaftaran -->
+  <div id="halaman1" class="halaman aktif">
+    <h1 class="judul-utama">FORM PENDAFTARAN</h1>
+    <p class="subjudul">Silahkan isi biodata Anda di bawah ini!</p>
+    <table>
+      <tbody>
+        <tr>
+          <td><b>Nama</b></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><b>Umur</b></td>
+          <td><input type="number" /></td>
+        </tr>
+        <tr>
+          <td><b>Jenis Kelamin</b></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><b>Email</b></td>
+          <td><input type="email" /></td>
+        </tr>
+        <tr>
+          <td><b>NISN/NIS</b></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><b>Asal Sekolah</b></td>
+          <td><input type="text" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-lightblue" onclick="pindah(2)">Next → Login</button>
+  </div>
+
+  <!-- Halaman 2: Login -->
+  <div id="halaman2" class="halaman">
+    <h2 class="judul-login">Halaman Login</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td><b>Username</b></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><b>Password</b></td>
+          <td><input type="password" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button class="btn btn-yellow" onclick="pindah(3)">Login</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Halaman 3: Pilihan SMK -->
+  <div id="halaman3" class="halaman">
+    <h2 class="judul-pilih">Pilih Sekolah yang Anda Minati</h2>
+    <ul class="list-sekolah">
+      <img src="osis.png" width="100" style="right: auto;"/>
+      <li><input type="radio" name="sekolah" /> SMK Kenangan</li>
+      <li><input type="radio" name="sekolah" /> SMK Cikuya 09</li>
+      <li><input type="radio" name="sekolah" /> SMK PGRI 35</li>
+      <li><input type="radio" name="sekolah" /> SMK Majalaya</li>
+    </ul>
+    <button class="btn btn-lightgreen" onclick="pindah(4)">Save</button>
+  </div>
+
+  <!-- Halaman 4: Selesai -->
+  <div id="halaman4" class="halaman">
+    <h2 class="judul-selesai">Selamat!</h2>
+    <p class="pesan-selesai">Data Anda telah disimpan.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
